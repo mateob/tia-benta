@@ -7,12 +7,11 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeViewComponent } from './recipe-view/recipe-view.component';
 
-
 @NgModule({
   declarations: [RecipeFormComponent, RecipeListComponent, RecipeDetailComponent, RecipeViewComponent],
   imports: [
     SharedModule,
-    RecipeRoutingModule
-  ]
+    RecipeRoutingModule,
+  ],
 })
 export class RecipeModule { }

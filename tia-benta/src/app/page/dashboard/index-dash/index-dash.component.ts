@@ -9,8 +9,22 @@ import { PoMenuItem } from '@po-ui/ng-components';
 export class IndexDashComponent {
 
   public menuItems: Array<PoMenuItem> = [
-    { label: "home", link: "" },
-    { label: "Cliente", link: "customer" }
+    { label: "home", link: "", icon: "po-icon po-icon-filter", shortLabel: "Home" },
+    { label: "Cliente", link: "customer", icon: "po-icon po-icon-finance", shortLabel: "Cliente" },
+    {
+      label: "Teste", link: "customer", icon: "po-icon po-icon-finance", shortLabel: "Teste", subItems: [
+        {
+          label: "Sub Teste", link: '', subItems: [
+            { label: "Temp ", link: '' },
+            {
+              label: "Sub Sub Item", subItems: [
+                { label: "Sub Sub do Sub Item" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
   ]
 
 }

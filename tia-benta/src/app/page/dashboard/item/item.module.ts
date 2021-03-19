@@ -13,6 +13,6 @@ import { ItemViewComponent } from './item-view/item-view.component';
   imports: [
     SharedModule,
     ItemRoutingModule
-  ]
+  ],
 })
 export class ItemModule { }

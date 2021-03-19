@@ -4,6 +4,24 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@enums/*": [
+        "src/app/shared/enum/*"
+      ],
+      "@service/*": [
+        "src/app/shared/service/*"
+      ],
+      "@pages/public/*": [
+        "src/app/"
+      ],
+      "@pages/dashboard/*": [
+        "src/app/page/dashboard/item/*",
+        "src/app/page/dashboard/recipe/*",
+      ],
+      "@model/*": [
+        "src/app/shared/model/*"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,

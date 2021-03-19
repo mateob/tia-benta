@@ -1,18 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { PoPageAction } from '@po-ui/ng-components';
+import { PoDynamicFormField, PoPageAction } from '@po-ui/ng-components';
+import { CustomerModel } from '@model/customer.model';
+import { CustomerModule } from '../customer.module';
 
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
   styleUrls: ['./customer-form.component.css']
 })
-export class CustomerFormComponent implements OnInit {
+export class CustomerFormComponent {
+
+  public fields: Array<PoDynamicFormField> = new CustomerModel().formFields;
+  public resource: CustomerModule = new CustomerModule();
 
   readonly pageActions: Array<PoPageAction> = [];
 
   constructor() { }
 
-  ngOnInit() { }
+  getForm(item: any) {
+    console.log(item.form.value);
+  }
 
 }

@@ -4,13 +4,14 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { ItemFormComponent } from './item-form/item-form.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemViewComponent } from './item-view/item-view.component';
+import { ActionUrl } from '@enums/action-url.enum';
 
 const routes: Routes = [
-  { path: '', component: ItemListComponent },
-  { path: 'create', component: ItemFormComponent },
-  { path: ':id/edit', component: ItemDetailComponent },
-  { path: ':id/view', component: ItemViewComponent },
-  { path: '**', redirectTo: '' }
+  { path: ActionUrl.LIST, component: ItemListComponent },
+  { path: ActionUrl.CREATE, component: ItemFormComponent },
+  { path: `:id/${ActionUrl.EDIT}`, component: ItemDetailComponent },
+  { path: `:id/${ActionUrl.VIEW}`, component: ItemViewComponent },
+  { path: '**', redirectTo: ActionUrl.LIST }
 ];
 
 @NgModule({

@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
-import { RecipeFormComponent } from './recipe-form/recipe-form.component';
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeViewComponent } from './recipe-view/recipe-view.component';
+import { RecipeDetailComponent } from '@pages/dashboard/recipe-detail/recipe-detail.component';
+import { RecipeFormComponent } from '@pages/dashboard/recipe-form/recipe-form.component';
+import { RecipeListComponent } from '@pages/dashboard/recipe-list/recipe-list.component';
+import { RecipeViewComponent } from '@pages/dashboard/recipe-view/recipe-view.component';
+import { ActionUrl } from '@enums/action-url.enum';
 
 const routes: Routes = [
-  { path: '', component: RecipeListComponent },
-  { path: 'create', component: RecipeFormComponent },
-  { path: ':id/edit', component: RecipeDetailComponent },
-  { path: ':id/view', component: RecipeViewComponent },
-  { path: '**', redirectTo: '' }
+  { path: ActionUrl.LIST, component: RecipeListComponent },
+  { path: ActionUrl.CREATE, component: RecipeFormComponent },
+  { path: `:id/${ActionUrl.EDIT}`, component: RecipeDetailComponent },
+  { path: `:id/${ActionUrl.VIEW}`, component: RecipeViewComponent },
+  { path: '**', redirectTo: ActionUrl.LIST }
 ];
 
 @NgModule({
