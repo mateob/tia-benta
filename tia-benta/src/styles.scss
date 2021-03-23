@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+
+$btn-color-blue: #2c43c8;
+$btn-color-orange: #ea9b3e;
+$btn-color-pink: #ab4391;
+
+@mixin btnHover($color, $color-text) {
+  &:hover {
+    background-color: scale-color($color, $lightness: -40%);
+    border: 1px solid scale-color($color, $lightness: -30%);
+    color: $color-text;
+  }
+}
+
+@mixin btnActive($color, $color-text) {
+  &:active {
+    background-color: scale-color($color, $lightness: -60%);
+    border: 1px solid scale-color($color, $lightness: -50%);
+    color: $color-text;
+  }
+}
+
+@mixin btnDisable($color, $color-text) {
+  &:disabled {
+    background-color: scale-color($color, $lightness: 60%);
+    border: 1px solid scale-color($color, $lightness: 40%);
+    color: $color-text;
+  }
+  &:disabled:hover {
+    background-color: scale-color($color, $lightness: 60%);
+    border: 1px solid scale-color($color, $lightness: 40%);
+    color: $color-text;
+  }
+}
+
+@mixin btnActions($color, $color-text) {
+  background-color: $color;
+  border: 1px solid $color;
+  color: $color-text;
+  @include btnActive($color, $color-text);
+  @include btnDisable($color, $color-text);
+  @include btnHover($color, $color-text);
+}
+
+.btn-color-blue > button {
+  @include btnActions($btn-color-blue, white);
+}
+
+.btn-color-orange > button {
+  @include btnActions($btn-color-orange, white);
+}
+
+.btn-color-pink > button {
+  @include btnActions($btn-color-pink, white);
+}

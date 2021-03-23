@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "johnpapa.angular-essentials",
+    "eamodio.gitlens",
+    "posnippets.po-snippets",
+    "sonarsource.sonarlint-vscode",
+    "pmneo.tsimporter",
+    "gencer.html-slim-scss-css-class-completion",
+    "sibiraj-s.vscode-scss-formatter"
+  ]
+}
