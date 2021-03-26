@@ -1,3 +1,4 @@
 <po-page-default p-title="CustomerDetail" [p-actions]="pageActions">
-
+  <po-dynamic-form p-auto-focus="name" [p-fields]="fields" (p-form)="getForm($event)" [p-value]="resource">
+  </po-dynamic-form>
 </po-page-default>

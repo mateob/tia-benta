@@ -3,6 +3,7 @@
 $btn-color-blue: #2c43c8;
 $btn-color-orange: #ea9b3e;
 $btn-color-pink: #ab4391;
+$btn-color-green: rgb(51, 140, 51);
 
 @mixin btnHover($color, $color-text) {
   &:hover {
@@ -52,4 +53,8 @@ $btn-color-pink: #ab4391;
 
 .btn-color-pink > button {
   @include btnActions($btn-color-pink, white);
+}
+
+.btn-color-green > button {
+  @include btnActions($btn-color-green, white);
 }
