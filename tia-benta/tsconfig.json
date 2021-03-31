@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -20,6 +19,9 @@
       ],
       "@model/*": [
         "src/app/shared/model/*"
+      ],
+      "@base/*": [
+        "src/app/shared/base-component/*.ts"
       ]
     },
     "forceConsistentCasingInFileNames": true,
