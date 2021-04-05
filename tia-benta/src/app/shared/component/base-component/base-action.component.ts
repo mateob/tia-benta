@@ -18,4 +18,14 @@ export abstract class BaseActionComponent<T extends BaseModel> extends BaseResou
   }
   public btnSave(): PoPageAction { return this.dataBtnSave(); }
   public tblSave(): PoTableAction { return this.dataBtnSave(); }
+
+  /**Button Delete*/
+  protected onDelete(item: T) { };
+  protected disableDelete(): boolean { return false; }
+  protected visibleDelete(): boolean { return true; }
+  private dataBtnDelete(): PoPopupAction {
+    return { label: 'Excluir', icon: '', action: this.onDelete.bind(this), disabled: this.disableDelete(), visible: this.visibleDelete() };
+  }
+  public btnDelete(): PoPageAction { return this.dataBtnDelete(); }
+  public tblDelete(): PoTableAction { return this.dataBtnDelete(); }
 }
