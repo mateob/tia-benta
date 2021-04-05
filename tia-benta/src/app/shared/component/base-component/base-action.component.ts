@@ -28,4 +28,14 @@ export abstract class BaseActionComponent<T extends BaseModel> extends BaseResou
   }
   public btnDelete(): PoPageAction { return this.dataBtnDelete(); }
   public tblDelete(): PoTableAction { return this.dataBtnDelete(); }
+
+  /**Button Cancel*/
+  protected onCancel(item: T) { };
+  protected disableCancel(): boolean { return false; }
+  protected visibleCancel(): boolean { return true; }
+  private dataBtnCancel(): PoPopupAction {
+    return { label: 'Cancelar', icon: '', action: this.onCancel.bind(this), disabled: this.disableCancel(), visible: this.visibleCancel() };
+  }
+  public btnCancel(): PoPageAction { return this.dataBtnCancel(); }
+  public tblCancel(): PoTableAction { return this.dataBtnCancel(); }
 }
