@@ -1,7 +1,7 @@
 
 import { Directive, Injector } from '@angular/core';
 import { PoDialogService, PoNotification, PoNotificationService, PoToasterOrientation, PoToasterType } from '@po-ui/ng-components';
-import { MessageModel } from '../../core/modal/message.model';
+import { MessageModel } from '../../../core/modal/message.model';
 
 @Directive()
 export abstract class BaseNotificationComponent {
