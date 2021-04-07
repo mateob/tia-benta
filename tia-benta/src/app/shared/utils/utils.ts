@@ -15,4 +15,14 @@ export class Utils {
     });
     return data;
   }
+
+  static validateKeyOfEnum<E>(data: E, compare: string): boolean {
+    for (const t in data) {
+      const isValueProperty = parseInt(t, 10) >= 0;
+      if (isValueProperty) {
+        return t.toUpperCase() === compare.toUpperCase();
+      }
+    }
+    return false;
+  }
 }

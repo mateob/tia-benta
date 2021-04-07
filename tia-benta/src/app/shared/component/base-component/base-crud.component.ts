@@ -15,9 +15,23 @@ export abstract class BaseCrudCompoment<T extends BaseModel> extends BaseActionC
 
   protected abstract validateBeforeAction(): boolean;
 
-  public onSave(item: T) {
+  public async onSave(item: T) {
     if (this.validateBeforeAction()) {
-      this.resourceService.create(item);
+      const newItem = await this.resourceService.create(item);
+      super.onSave(newItem);
     }
   }
+
+  public async onDelete(item: T) {
+    await this.resourceService.delete(item.id);
+    super.onDelete(item);
+  }
+
+  public async onSaveAndNew(item: T) {
+    if (this.validateBeforeAction()) {
+      await this.resourceService.create(item);
+      super.onSaveAndNew(item);
+    }
+  }
+
 }

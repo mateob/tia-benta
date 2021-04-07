@@ -1,7 +1,7 @@
 import { PoDynamicFormField, PoDynamicViewField, PoTableColumn } from "@po-ui/ng-components";
 
 export abstract class BaseModel {
-  public id?: string;
+  public id: string = '';
 
   protected abstract buildForm(): Array<PoDynamicFormField>;
   get formFields(): Array<PoDynamicFormField> {
