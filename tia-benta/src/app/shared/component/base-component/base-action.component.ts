@@ -38,4 +38,14 @@ export abstract class BaseActionComponent<T extends BaseModel> extends BaseResou
   }
   public btnCancel(): PoPageAction { return this.dataBtnCancel(); }
   public tblCancel(): PoTableAction { return this.dataBtnCancel(); }
+
+ /**Button Edit*/
+ protected onEdit(item: T) { };
+ protected disableEdit(): boolean { return false; }
+ protected visibleEdit(): boolean { return true; }
+ private dataBtnEdit(): PoPopupAction {
+   return { label: 'Editar', icon: '', action: this.onEdit.bind(this), disabled: this.disableEdit(), visible: this.visibleEdit() };
+ }
+ public btnEdit(): PoPageAction { return this.dataBtnEdit(); }
+ public tblEdit(): PoTableAction { return this.dataBtnEdit(); }
 }
