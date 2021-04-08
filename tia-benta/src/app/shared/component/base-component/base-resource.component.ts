@@ -3,11 +3,13 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ActionUrl } from '@enums/action-url.enum';
 import { BaseModalComponent } from './base-modal.component';
+import { Utils } from '../../utils/utils';
 
 @Directive()
 export abstract class BaseResourceComponente extends BaseModalComponent {
 
   public componentUrl: string;
+  protected currentAction: string = '';
   protected route: ActivatedRoute;
   protected router: Router;
   protected hasChanges: boolean = false;
@@ -19,6 +21,11 @@ export abstract class BaseResourceComponente extends BaseModalComponent {
     this.router = injector.get(Router);
 
     this.componentUrl = this.route.snapshot.parent?.url[0].path || "";
+    this.route.snapshot.url.forEach((url) => {
+      if (Utils.validateKeyOfEnum(ActionUrl, url.path)) {
+        this.currentAction = url.path;
+      }
+    });
   }
 
   @ViewChild('resourceForm', { static: true })
@@ -38,8 +45,9 @@ export abstract class BaseResourceComponente extends BaseModalComponent {
 
   protected redirectTo(path: string): void;
   protected redirectTo(path: string, id: string): void;
-  protected redirectTo(path: string, id: string, action: ActionUrl): void;
   protected redirectTo(id: string, action: ActionUrl): void;
+  protected redirectTo(path: string, id: string, action: ActionUrl): void;
+  protected redirectTo(path: string, action: ActionUrl): void;
   protected redirectTo(path?: string, id?: string, action?: ActionUrl): void {
     const pathToRote: string = path || this.componentUrl;
     this.router
