@@ -5,7 +5,7 @@ import { BaseResourceService } from '@service/base-resource.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CustomerService extends BaseResourceService<RoleModel> {
+export class RoleService extends BaseResourceService<RoleModel> {
   constructor(protected injector: Injector) {
     super(injector, RoleModel);
   }
