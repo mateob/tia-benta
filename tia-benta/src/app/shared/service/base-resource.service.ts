@@ -98,8 +98,8 @@ export abstract class BaseResourceService<T extends BaseModel>{
     return throwError(error);
   }
 
-  protected beforeCallRequest(data: T, isCreated?: boolean): T {
-    data.id = undefined;
-    return this.jsonDataToResouce(data);
+  protected beforeCallRequest(entity: T, isCreated?: boolean): T {
+    entity.id = '';
+    return this.jsonDataToResouce(entity);
   }
 }
