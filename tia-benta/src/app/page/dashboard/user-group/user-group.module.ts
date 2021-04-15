@@ -7,7 +7,6 @@ import { UserGroupViewComponent } from './user-group-view/user-group-view.compon
 import { UserGroupFormComponent } from './user-group-form/user-group-form.component';
 import { UserGroupDetailComponent } from './user-group-detail/user-group-detail.component';
 
-
 @NgModule({
   declarations: [UserGroupListComponent, UserGroupViewComponent, UserGroupFormComponent, UserGroupDetailComponent],
   imports: [
