@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: 'customer', loadChildren: () => import('@pages/dashboard/customer.module').then((m) => m.CustomerModule) },
   { path: 'recipe', loadChildren: () => import('@pages/dashboard/recipe.module').then((m) => m.RecipeModule) },
   { path: 'item', loadChildren: () => import('@pages/dashboard/item.module').then((m) => m.ItemModule) },
+  { path: 'stock', loadChildren: () => import('@pages/dashboard/stock.module').then((m) => m.StockModule) },
   { path: 'user-group', loadChildren: () => import('@pages/dashboard/user-group.module').then((m) => m.UserGroupModule) }
 ];
 
