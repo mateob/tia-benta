@@ -16,6 +16,9 @@
       "@pages/dashboard/*": [
         "src/app/page/dashboard/item/*",
         "src/app/page/dashboard/recipe/*",
+        "src/app/page/dashboard/user-group/*",
+        "src/app/page/dashboard/customer/*",
+        "src/app/page/dashboard/role/*"
       ],
       "@model/*": [
         "src/app/shared/model/*"
