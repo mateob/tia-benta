@@ -8,7 +8,6 @@ import { RoleFormComponent } from './role/role-form/role-form.component';
 import { RoleListComponent } from './role/role-list/role-list.component';
 import { RoleViewComponent } from './role/role-view/role-view.component';
 
-
 @NgModule({
   declarations: [IndexDashComponent, RoleDetailComponent, RoleFormComponent, RoleListComponent, RoleViewComponent],
   imports: [

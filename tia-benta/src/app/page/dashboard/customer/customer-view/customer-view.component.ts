@@ -1,22 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
-import { PoDynamicViewField, PoPageAction } from '@po-ui/ng-components';
 import { CustomerModel } from '@model/customer.model';
+import { CustomerService } from '../shared/customer.service';
+import { BaseViewComponent } from '../../../../shared/component/base-component/base-view.component';
 
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
   styleUrls: ['./customer-view.component.css']
 })
-export class CustomerViewComponent {
-
-  public fields: Array<PoDynamicViewField> = new CustomerModel().viewFields;
-  public resource = {
-    name: "teste", document: "12345678912"
+export class CustomerViewComponent extends BaseViewComponent<CustomerModel> {
+  protected validateBeforeAction(): boolean {
+    return true;
+  }
+  protected onModalSave(): boolean {
+    return true;
+  }
+  protected onModalCancel(): boolean {
+    return true;
   }
 
-  readonly pageActions: Array<PoPageAction> = [];
-
-  constructor() { }
+  constructor(protected injector: Injector, protected customerService: CustomerService) {
+    super(injector, new CustomerModel(), customerService);
+  }
 
 }
