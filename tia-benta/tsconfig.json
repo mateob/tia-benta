@@ -19,7 +19,8 @@
         "src/app/page/dashboard/user-group/*",
         "src/app/page/dashboard/customer/*",
         "src/app/page/dashboard/user/*",
-        "src/app/page/dashboard/role/*"
+        "src/app/page/dashboard/role/*",
+        "src/app/page/dashboard/stock/*"
       ],
       "@model/*": [
         "src/app/shared/model/*"

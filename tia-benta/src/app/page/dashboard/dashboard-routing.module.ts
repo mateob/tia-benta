@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'item', loadChildren: () => import('@pages/dashboard/item.module').then((m) => m.ItemModule) },
   { path: 'user-group', loadChildren: () => import('@pages/dashboard/user-group.module').then((m) => m.UserGroupModule) },
   { path: 'user', loadChildren: () => import('@pages/dashboard/user.module').then((m) => m.UserModule) },
-  { path: 'role', loadChildren: () => import('@pages/dashboard/role.module').then((m) => m.RoleModule) }
+  { path: 'role', loadChildren: () => import('@pages/dashboard/role.module').then((m) => m.RoleModule) },
+  { path: 'stock', loadChildren: () => import('./stock/stock.module').then((m) => m.StockModule) },
 ];
 
 @NgModule({
