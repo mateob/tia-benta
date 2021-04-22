@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: 'recipe', loadChildren: () => import('@pages/dashboard/recipe.module').then((m) => m.RecipeModule) },
   { path: 'item', loadChildren: () => import('@pages/dashboard/item.module').then((m) => m.ItemModule) },
   { path: 'user-group', loadChildren: () => import('@pages/dashboard/user-group.module').then((m) => m.UserGroupModule) },
-  { path: 'user', loadChildren: () => import('@pages/dashboard/user.module').then((m) => m.UserModule) }
+  { path: 'user', loadChildren: () => import('@pages/dashboard/user.module').then((m) => m.UserModule) },
+  { path: 'role', loadChildren: () => import('@pages/dashboard/role.module').then((m) => m.RoleModule) }
 ];
 
 @NgModule({
