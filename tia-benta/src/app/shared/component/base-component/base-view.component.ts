@@ -22,16 +22,18 @@ export abstract class BaseViewComponent<T extends BaseModel> extends BaseCrudCom
   }
 
   public async loadResouce(): Promise<T> {
+    let auxResource: T;
     if (this.currentAction === ActionUrl.EDIT ||
       this.currentAction === ActionUrl.VIEW) {
       let paramID: string = '';
       this.route.params.subscribe((param) => paramID = param.id);
-      const auxResource = await this.resourceService.getById(paramID);
+      auxResource = await this.resourceService.getById(paramID);
       if (!auxResource) {
         this.handlerError({ message: 'Ocorreu um erro no servidor, tente mais tarde', detailedMessage: 'link da documentação' } as MessageModel);
+      } else {
+        return auxResource;
       }
     }
-    return this.resource;
+    return Promise.resolve({} as T);
   }
-
 }

@@ -20,10 +20,11 @@ export abstract class BaseResourceService<T extends BaseModel>{
 
   constructor(
     protected injector: Injector,
+    protected pathIntoApi: string,
     protected type: new () => T
   ) {
     this.http = injector.get(HttpClient);
-    this.apiUrl = environment.URL_API;
+    this.apiUrl = `${environment.URL_API}/${pathIntoApi}`;
   }
 
   // GET
@@ -41,7 +42,7 @@ export abstract class BaseResourceService<T extends BaseModel>{
   // ById
   getById(id: string): Promise<T> {
     return this.http
-      .get<T>(`${this.apiUrl}/rota/${id}`, this.header)
+      .get<T>(`${this.apiUrl}/${id}`, this.header)
       .pipe(
         map(this.jsonDataToResouce.bind(this)),
         catchError(this.handleError)
@@ -52,7 +53,7 @@ export abstract class BaseResourceService<T extends BaseModel>{
   // POST
   create(resource: T): Promise<T> {
     return this.http
-      .post<T>(`${this.apiUrl}/rota/`,
+      .post<T>(`${this.apiUrl}`,
         this.beforeCallRequest(resource, true), this.header)
       .pipe(
         map(this.jsonDataToResouce.bind(this)),
@@ -64,7 +65,7 @@ export abstract class BaseResourceService<T extends BaseModel>{
   // PUT
   update(resource: T): Promise<T> {
     return this.http
-      .put<T>(`${this.apiUrl}/rota/${resource.id}`,
+      .put<T>(`${this.apiUrl}/${resource.id}`,
         this.beforeCallRequest(resource), this.header)
       .pipe(
         map(this.jsonDataToResouce.bind(this)),
@@ -76,7 +77,7 @@ export abstract class BaseResourceService<T extends BaseModel>{
   // DELETE
   delete(id: string): Promise<any> {
     return this.http
-      .delete(`${this.apiUrl}/rota/${id}`, this.header)
+      .delete(`${this.apiUrl}/${id}`, this.header)
       .pipe(
         catchError(this.handleError)
       )

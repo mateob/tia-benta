@@ -20,7 +20,9 @@ export abstract class BaseResourceComponente extends BaseModalComponent {
     this.route = injector.get(ActivatedRoute);
     this.router = injector.get(Router);
 
-    this.componentUrl = this.route.snapshot.parent?.url[0].path || "";
+    const rootOfCurrentPath = this.route.snapshot.parent?.pathFromRoot[1].url[0].path;
+    const pathOfCurrentPath = this.route.snapshot.parent?.url[0].path || "";
+    this.componentUrl = `${rootOfCurrentPath}/${pathOfCurrentPath}`
     this.route.snapshot.url.forEach((url) => {
       if (Utils.validateKeyOfEnum(ActionUrl, url.path)) {
         this.currentAction = url.path;
@@ -45,7 +47,6 @@ export abstract class BaseResourceComponente extends BaseModalComponent {
 
   protected redirectTo(path: string): void;
   protected redirectTo(path: string, id: string): void;
-  protected redirectTo(id: string, action: ActionUrl): void;
   protected redirectTo(path: string, id: string, action: ActionUrl): void;
   protected redirectTo(path: string, action: ActionUrl): void;
   protected redirectTo(path?: string, id?: string, action?: ActionUrl): void {

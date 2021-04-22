@@ -19,7 +19,7 @@ export abstract class BaseActionComponent<T extends BaseModel> extends BaseResou
 
   /**  Button Save */
   protected onSave(item: T) {
-    this.redirectTo(item.id, ActionUrl.EDIT);
+    this.redirectTo(this.componentUrl, item.id, ActionUrl.EDIT);
   };
   protected disableSave(): boolean { return false; }
   protected visibleSave(): boolean { return true; }
@@ -55,8 +55,8 @@ export abstract class BaseActionComponent<T extends BaseModel> extends BaseResou
 
   /**Button Edit*/
   protected onEdit(item: T) {
-    this.redirectTo(item.id, ActionUrl.EDIT);
-  };
+    this.redirectTo(this.componentUrl, item.id, ActionUrl.EDIT);
+  }
   protected disableEdit(): boolean { return false; }
   protected visibleEdit(): boolean { return true; }
   private dataBtnEdit(): PoPopupAction {
@@ -115,7 +115,7 @@ export abstract class BaseActionComponent<T extends BaseModel> extends BaseResou
 
   /** Button View */
   protected onView(item: T) {
-    this.redirectTo(item.id, ActionUrl.VIEW);
+    this.redirectTo(this.componentUrl, item.id, ActionUrl.VIEW);
   };
   protected disableView(): boolean { return false; }
   protected visibleView(): boolean { return true; }
