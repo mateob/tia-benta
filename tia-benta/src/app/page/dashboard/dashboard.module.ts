@@ -8,7 +8,6 @@ import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserViewComponent } from './user/user-view/user-view.component';
 
-
 @NgModule({
   declarations: [IndexDashComponent, UserDetailComponent, UserFormComponent, UserListComponent, UserViewComponent],
   imports: [

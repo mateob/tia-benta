@@ -1,24 +1,29 @@
-import { Component } from '@angular/core';
-
-import { PoDynamicFormField, PoPageAction } from '@po-ui/ng-components';
+import { Component, Injector } from '@angular/core';
 import { CustomerModel } from '@model/customer.model';
+import { CustomerService } from '../shared/customer.service';
+import { BaseFormComponent } from '../../../../shared/component/base-component/base-form.component';
 
 @Component({
   selector: 'app-customer-form',
   templateUrl: './customer-form.component.html',
   styleUrls: ['./customer-form.component.css']
 })
-export class CustomerFormComponent {
+export class CustomerFormComponent extends BaseFormComponent<CustomerModel> {
 
-  public fields: Array<PoDynamicFormField> = new CustomerModel().formFields;
-  public resource: CustomerModel = new CustomerModel();
+  protected validateBeforeAction(): boolean {
+    return true;
+  }
 
-  readonly pageActions: Array<PoPageAction> = [];
+  protected onModalSave(): boolean {
+    return true;
+  }
 
-  constructor() { }
+  protected onModalCancel(): boolean {
+    return true;
+  }
 
-  getForm(item: any) {
-    console.log(item.form.value);
+  constructor(protected injector: Injector, protected customerService: CustomerService) {
+    super(injector, new CustomerModel(), customerService);
   }
 
 }
