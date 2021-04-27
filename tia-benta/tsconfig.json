@@ -20,7 +20,8 @@
         "src/app/page/dashboard/customer/*",
         "src/app/page/dashboard/user/*",
         "src/app/page/dashboard/role/*",
-        "src/app/page/dashboard/stock/*"
+        "src/app/page/dashboard/stock/*",
+        "src/app/page/dashboard/store-order/*"
       ],
       "@model/*": [
         "src/app/shared/model/*"

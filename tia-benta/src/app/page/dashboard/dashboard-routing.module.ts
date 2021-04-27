@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'user', loadChildren: () => import('@pages/dashboard/user.module').then((m) => m.UserModule) },
   { path: 'role', loadChildren: () => import('@pages/dashboard/role.module').then((m) => m.RoleModule) },
   { path: 'stock', loadChildren: () => import('./stock/stock.module').then((m) => m.StockModule) },
+  { path: 'store-order', loadChildren: () => import('./store-order/store-order.module').then((m) => m.StoreOrderModule) }
 ];
 
 @NgModule({
