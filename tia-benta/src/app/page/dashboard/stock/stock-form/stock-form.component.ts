@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector } from '@angular/core';
+import { StockModel } from '@model/stock.model';
+import { StockService } from '../shared/stock.service';
+import { BaseFormComponent } from '../../../../shared/component/base-component/base-form.component';
 
 @Component({
-  selector: 'app-stock-form',
+  selector: 'app-customer-form',
   templateUrl: './stock-form.component.html',
-  styleUrls: ['./stock-form.component.scss']
+  styleUrls: ['./stock-form.component.css']
 })
-export class StockFormComponent implements OnInit {
+export class StockFormComponent extends BaseFormComponent<StockModel> {
 
-  constructor() { }
+  protected validateBeforeAction(): boolean {
+    return true;
+  }
 
-  ngOnInit(): void {
+  protected onModalSave(): boolean {
+    return true;
+  }
+
+  protected onModalCancel(): boolean {
+    return true;
+  }
+
+  constructor(protected injector: Injector, protected stockService: StockService) {
+    super(injector, new StockModel(), stockService);
   }
 
 }
