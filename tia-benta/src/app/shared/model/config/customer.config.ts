@@ -36,7 +36,6 @@ export class CustomerConfig extends BaseModel {
   }
   protected buildTable(): PoTableColumn[] {
     return [
-      { property: 'id', label: 'ID', width: '20%' },
       { property: 'name', label: 'Nome Completo', width: '30%' },
       { property: 'document', label: 'Documento CPF', width: '40%' },
     ]

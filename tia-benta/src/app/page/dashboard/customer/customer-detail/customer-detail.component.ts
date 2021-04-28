@@ -1,24 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
-import { PoDynamicFormField, PoPageAction } from '@po-ui/ng-components';
 import { CustomerModel } from '@model/customer.model';
+import { BaseFormComponent } from '../../../../shared/component/base-component/base-form.component';
+import { CustomerService } from '../shared/customer.service';
 
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
   styleUrls: ['./customer-detail.component.css']
 })
-export class CustomerDetailComponent {
-  public fields: Array<PoDynamicFormField> = new CustomerModel().formFields;
-  public resource: CustomerModel = new CustomerModel(
-    "Mateo Barrios", "12345678912"
-  );
+export class CustomerDetailComponent extends BaseFormComponent<CustomerModel> {
+  protected validateBeforeAction(): boolean {
+    return true;
+  }
 
-  readonly pageActions: Array<PoPageAction> = [];
+  protected onModalSave(): boolean {
+    return true;
+  }
 
-  constructor() { }
+  protected onModalCancel(): boolean {
+    return true;
+  }
 
-  getForm(item: any) {
-    console.log(item.form.value);
+  constructor(protected injector: Injector, protected customerService: CustomerService) {
+    super(injector, new CustomerModel(), customerService);
+    console.log('Entrie no detailr');
   }
 }
