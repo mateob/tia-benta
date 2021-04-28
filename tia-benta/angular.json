@@ -66,6 +66,14 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
             }
           }
         },
@@ -77,6 +85,9 @@
           "configurations": {
             "production": {
               "browserTarget": "tia-benta:build:production"
+            },
+            "development": {
+              "browserTarget": "tia-benta:build:development"
             }
           }
         },
