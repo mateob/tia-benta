@@ -6,5 +6,6 @@ export class RecipeModel extends RecipeConfig {
     public name?: string,
     public price?: number,
     public items?: ItemModule[],
+    public quantity?: number
   ) { super(); }
 }
