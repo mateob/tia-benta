@@ -24,6 +24,5 @@ export class CustomerDetailComponent extends BaseFormComponent<CustomerModel> {
 
   constructor(protected injector: Injector, protected customerService: CustomerService) {
     super(injector, new CustomerModel(), customerService);
-    console.log('Entrie no detailr');
   }
 }

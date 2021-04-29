@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:dev": "",
+    "start:dev": "ng serve --configuration=development",
     "build": "ng build",
     "build:prd": "",
     "build:hml": "",
@@ -24,6 +24,7 @@
     "@angular/router": "~11.2.0",
     "@po-ui/ng-components": "^4.9.0",
     "angular-in-memory-web-api": "^0.11.0",
+    "jwt-decode": "^3.1.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -33,6 +34,7 @@
     "@angular/cli": "~11.2.4",
     "@angular/compiler-cli": "~11.2.5",
     "@types/jasmine": "~3.6.0",
+    "@types/jwt-decode": "^3.1.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
