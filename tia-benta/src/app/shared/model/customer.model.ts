@@ -5,7 +5,7 @@ export class CustomerModel extends CustomerConfig {
     public name?: string,
     public document?: string,
     public sex?: string,
-    public birthDate?: number,
+    public birthDate?: string,
     public ddd?: number,
     public phone?: number,
     public personType?: string,
