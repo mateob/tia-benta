@@ -1,3 +1,4 @@
+import { ItemModel } from '@model/item.model';
 import { InMemoryDbService, RequestInfo } from 'angular-in-memory-web-api';
 import { Observable } from 'rxjs';
 import { CustomerModel } from './model/customer.model';
@@ -16,7 +17,6 @@ export class DBTiaBenta implements InMemoryDbService {
       { id: '1241',name: 'Teste 8',document: '1934',sex: 'Masculino',birthDate: '08/01/2001',ddd: 51,phone: 823456789,personType: 'Fisica',state: 'RS',city: 'Porto Alegre',neighborhood: 'Centro',address: 'Andradas',addressNumber: 14,complement: '22',postalCode: 91919191,municipalityIbgeCode: '999',email: 'teste8@teste.com.br',} as CustomerModel,
       { id: '1242',name: 'Teste 9',document: '2034',sex: 'Masculino',birthDate: '09/01/2001',ddd: 51,phone: 923456789,personType: 'Fisica',state: 'RS',city: 'Porto Alegre',neighborhood: 'Centro',address: 'Andradas',addressNumber: 14,complement: '23',postalCode: 91919191,municipalityIbgeCode: '999',email: 'teste9@teste.com.br',} as CustomerModel,
       { id: '1243',name: 'Teste 10',document: '2134',sex: 'Masculino',birthDate: '10/01/2001',ddd: 51,phone: 103456789,personType: 'Fisica',state: 'RS',city: 'Porto Alegre',neighborhood: 'Centro',address: 'Andradas',addressNumber: 14,complement: '31',postalCode: 91919191,municipalityIbgeCode: '999',email: 'teste10@teste.com.br',} as CustomerModel,
-
     ]
 
     const geralItems: ItemModel[] = [
@@ -39,7 +39,17 @@ export class DBTiaBenta implements InMemoryDbService {
       { id: '4123', name: 'Feijão', detail: 'Feijão preto', quantity: 7, unit: 'Kg', type: 'Grãos'} as ItemModel,
       { id: '3123', name: 'Chocolate em pó', detail: '70% cacau', quantity: 2, unit: 'Gr', type: 'Insumo'} as ItemModel,
       { id: '2123', name: 'Fermento', detail: 'Fermento biológico', quantity: 9, unit: 'Gr', type: 'Insumo'} as ItemModel,
-      { id: '0234', name: 'Ovo', detail: 'Ovo de galinha', quantity: 10, unit: 'Un', type: 'Insumo'} as ItemModel
+      { id: '0234', name: 'Ovo', detail: 'Ovo de galinha', quantity: 10, unit: 'Un', type: 'Insumo'} as ItemModel,
+      { id: '3131', name: 'Alface', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Rabanete', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Agrião', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Couve', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Espinafre', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Rúcula', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Alho Poró', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Coentro', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Salsa', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
+      { id: '1234', name: 'Repolho', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
     ]
 
     const token: any[] = [
