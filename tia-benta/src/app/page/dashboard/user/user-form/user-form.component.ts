@@ -25,5 +25,4 @@ export class UserFormComponent extends BaseFormComponent<UserModel> {
   constructor(protected injector: Injector, protected userService: UserService) {
     super(injector, new UserModel(), userService);
   }
-
 }

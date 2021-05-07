@@ -3,7 +3,6 @@ import { UserModel } from '@model/user.model';
 import { UserService } from '../shared/user.service';
 import { BaseViewComponent } from '../../../../shared/component/base-component/base-view.component';
 
-
 @Component({
   selector: 'app-user-view',
   templateUrl: './user-view.component.html',

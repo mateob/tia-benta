@@ -7,6 +7,6 @@ import { BaseResourceService } from '@service/base-resource.service';
 })
 export class UserGroupService extends BaseResourceService<UserGroupModel> {
   constructor(protected injector: Injector) {
-    super(injector, UserGroupModel);
+    super(injector, 'user-group', UserGroupModel);
   }
 }
