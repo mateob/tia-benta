@@ -6,7 +6,7 @@ import { CustomerModel } from '@model/customer.model';
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
-  styleUrls: ['./customer-detail.component.css']
+  styleUrls: ['./customer-detail.component.scss']
 })
 export class CustomerDetailComponent {
   public fields: Array<PoDynamicFormField> = new CustomerModel().formFields;

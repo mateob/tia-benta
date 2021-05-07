@@ -1,5 +1,4 @@
 import { Component, Injector } from '@angular/core';
-
 import { CustomerModel } from '@model/customer.model';
 import { CustomerService } from '../shared/customer.service';
 import { BaseViewComponent } from '../../../../shared/component/base-component/base-view.component';

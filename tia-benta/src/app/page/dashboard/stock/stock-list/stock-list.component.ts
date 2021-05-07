@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { StockModel } from '@model/stock.model';
 
 @Component({
-  selector: 'app-customer-list',
+  selector: 'app-stock-list',
   templateUrl: './stock-list.component.html',
   styleUrls: ['./stock-list.component.scss']
 })
-export class CustomerListComponent {
+export class StockListComponent {
 
   public fields = new StockModel().tableColumns;
   public resource = [
