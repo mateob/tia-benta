@@ -6,7 +6,7 @@ import { BaseViewComponent } from '../../../../shared/component/base-component/b
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
-  styleUrls: ['./customer-view.component.css']
+  styleUrls: ['./customer-view.component.scss']
 })
 export class CustomerViewComponent extends BaseViewComponent<CustomerModel> {
   protected validateBeforeAction(): boolean {

@@ -6,7 +6,7 @@ import { BaseFormComponent } from '../../../../shared/component/base-component/b
 @Component({
   selector: 'app-recipe-form',
   templateUrl: './recipe-form.component.html',
-  styleUrls: ['./recipe-form.component.css']
+  styleUrls: ['./recipe-form.component.scss']
 })
 export class RecipeFormComponent extends BaseFormComponent<RecipeModel> {
 
