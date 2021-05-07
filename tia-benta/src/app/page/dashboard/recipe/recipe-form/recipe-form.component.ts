@@ -1,18 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-
-import { PoPageAction } from '@po-ui/ng-components';
+import { Component, Injector } from '@angular/core';
+import { RecipeModel } from '@model/recipe.model';
+import { RecipeService } from '../shared/recipe.service';
+import { BaseFormComponent } from '../../../../shared/component/base-component/base-form.component';
 
 @Component({
   selector: 'app-recipe-form',
   templateUrl: './recipe-form.component.html',
-  styleUrls: ['./recipe-form.component.css']
+  styleUrls: ['./recipe-form.component.scss']
 })
-export class RecipeFormComponent implements OnInit {
+export class RecipeFormComponent extends BaseFormComponent<RecipeModel> {
 
-  readonly pageActions: Array<PoPageAction> = [];
+  protected validateBeforeAction(): boolean {
+    return true;
+  }
 
-  constructor() { }
+  protected onModalSave(): boolean {
+    return true;
+  }
 
-  ngOnInit() { }
+  protected onModalCancel(): boolean {
+    return true;
+  }
+
+  constructor(protected injector: Injector, protected recipeService: RecipeService) {
+    super(injector, new RecipeModel(), recipeService);
+  }
 
 }

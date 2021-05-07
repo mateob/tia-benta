@@ -1,7 +1,7 @@
 import { Component, Injector } from '@angular/core';
 import { UserModel } from '@model/user.model';
-import { UserService } from '../shared/user.service';
 import { BaseListComponent } from '../../../../shared/component/base-component/base-list.component';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-user-list',
