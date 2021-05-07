@@ -12,7 +12,7 @@ export class DBTiaBenta implements InMemoryDbService {
       { id: '7123', name: 'Teste 4', document: '7123' } as CustomerModel,
       { id: '6123', name: 'Teste 5', document: '6123' } as CustomerModel,
     ]
-    const verdura: ItemModel[] = [
+    const greenery: ItemModel[] = [
       { id: '3131', name: 'Alface', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
       { id: '1234', name: 'Rabanete', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
       { id: '1234', name: 'Agrião', detail: 'verduras frescas',quantity: 1,unit: 'KG',type: 'Insumo' } as ItemModel,
@@ -29,7 +29,7 @@ export class DBTiaBenta implements InMemoryDbService {
     const token: any[] = [
       { id: '', userName: '', password: '', name: '', roles: [], userGroupId: '', token: '' }
     ];
-    return { customer, token, verdura };
+    return { customer, token, greenery };
   }
 
 }
