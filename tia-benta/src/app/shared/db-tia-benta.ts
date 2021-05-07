@@ -19,7 +19,7 @@ export class DBTiaBenta implements InMemoryDbService {
 
     ]
 
-    const fruits: ItemModel[] = [
+    const geralItems: ItemModel[] = [
       { id: '1234', name: 'Maçã', detail: 'Maçã madura', quantity: 10, unit: 'Kg', type: 'Frutas'} as ItemModel,
       { id: '9123', name: 'Banana', detail: 'Banana madura', quantity: 8, unit: 'Kg', type: 'Frutas'} as ItemModel,
       { id: '8123', name: 'Laranja', detail: 'Laranja madura', quantity: 10, unit: 'Kg', type: 'Frutas'} as ItemModel,
@@ -29,12 +29,22 @@ export class DBTiaBenta implements InMemoryDbService {
       { id: '4123', name: 'Mamão', detail: 'Mamão maduro', quantity: 7, unit: 'Kg', type: 'Frutas'} as ItemModel,
       { id: '3123', name: 'Abacate', detail: 'Abacate maduro', quantity: 2, unit: 'Kg', type: 'Frutas'} as ItemModel,
       { id: '2123', name: 'Ameixa', detail: 'Ameixa madura', quantity: 9, unit: 'Kg', type: 'Frutas'} as ItemModel,
-      { id: '0234', name: 'Pêra', detail: 'Pêra madura', quantity: 10, unit: 'Kg', type: 'Frutas'} as ItemModel
+      { id: '0234', name: 'Pêra', detail: 'Pêra madura', quantity: 10, unit: 'Kg', type: 'Frutas'} as ItemModel,
+      { id: '1234', name: 'Azeite', detail: 'Óleo de soja', quantity: 10, unit: 'L', type: 'Óleos'} as ItemModel,
+      { id: '9123', name: 'Farinha', detail: 'Farinha de trigo', quantity: 8, unit: 'Gr', type: 'Insumo'} as ItemModel,
+      { id: '8123', name: 'Manteiga', detail: 'Manteiga Parmalat', quantity: 10, unit: 'Gr', type: 'Gorduras'} as ItemModel,
+      { id: '7123', name: 'Sal', detail: 'Sal marinho', quantity: 5, unit: 'Gr', type: 'Insumo'} as ItemModel,
+      { id: '6123', name: 'Açúcar', detail: 'Açúcar confeiteiro', quantity: 2, unit: 'Kg', type: 'Açúcares'} as ItemModel,
+      { id: '5123', name: 'Arroz', detail: 'Arroz branco', quantity: 6, unit: 'Kg', type: 'Grãos'} as ItemModel,
+      { id: '4123', name: 'Feijão', detail: 'Feijão preto', quantity: 7, unit: 'Kg', type: 'Grãos'} as ItemModel,
+      { id: '3123', name: 'Chocolate em pó', detail: '70% cacau', quantity: 2, unit: 'Gr', type: 'Insumo'} as ItemModel,
+      { id: '2123', name: 'Fermento', detail: 'Fermento biológico', quantity: 9, unit: 'Gr', type: 'Insumo'} as ItemModel,
+      { id: '0234', name: 'Ovo', detail: 'Ovo de galinha', quantity: 10, unit: 'Un', type: 'Insumo'} as ItemModel
     ]
 
     const token: any[] = [
       { id: '', userName: '', password: '', name: '', roles: [], userGroupId: '', token: '' }
     ];
-    return { customer, fruits, token };
+    return { customer, geralItems, token };
   }
 }
