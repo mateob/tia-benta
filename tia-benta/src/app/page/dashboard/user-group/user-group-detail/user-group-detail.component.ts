@@ -5,7 +5,7 @@ import { BaseFormComponent } from '../../../../shared/component/base-component/b
 import { UserGroupService } from '../shared/user-group.service';
 
 @Component({
-  selector: 'app-customer-detail',
+  selector: 'app-user-group-detail',
   templateUrl: './user-group-detail.component.html',
   styleUrls: ['./user-group-detail.component.scss']
 })

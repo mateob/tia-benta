@@ -4,7 +4,7 @@ import { BaseListComponent } from '../../../../shared/component/base-component/b
 import { UserGroupService } from '../shared/user-group.service';
 
 @Component({
-  selector: 'app-customer-list',
+  selector: 'app-user-group-list',
   templateUrl: './user-group-list.component.html',
   styleUrls: ['./user-group-list.component.scss']
 })
