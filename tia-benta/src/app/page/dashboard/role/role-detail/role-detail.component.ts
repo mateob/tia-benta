@@ -5,7 +5,7 @@ import { BaseFormComponent } from '../../../../shared/component/base-component/b
 import { RoleService } from '../shared/role.service';
 
 @Component({
-  selector: 'app-customer-detail',
+  selector: 'app-role-detail',
   templateUrl: './role-detail.component.html',
   styleUrls: ['./role-detail.component.scss']
 })

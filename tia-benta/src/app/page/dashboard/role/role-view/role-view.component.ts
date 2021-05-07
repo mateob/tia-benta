@@ -5,7 +5,7 @@ import { RoleService } from '../shared/role.service';
 import { BaseViewComponent } from '../../../../shared/component/base-component/base-view.component';
 
 @Component({
-  selector: 'app-customer-view',
+  selector: 'app-role-view',
   templateUrl: './role-view.component.html',
   styleUrls: ['./role-view.component.scss']
 })

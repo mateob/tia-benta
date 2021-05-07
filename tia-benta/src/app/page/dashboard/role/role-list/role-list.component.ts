@@ -4,7 +4,7 @@ import { BaseListComponent } from '../../../../shared/component/base-component/b
 import { RoleService } from '../shared/role.service';
 
 @Component({
-  selector: 'app-customer-list',
+  selector: 'app-role-list',
   templateUrl: './role-list.component.html',
   styleUrls: ['./role-list.component.scss']
 })
