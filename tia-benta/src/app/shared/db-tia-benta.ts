@@ -28,7 +28,7 @@ export class DBTiaBenta implements InMemoryDbService {
     const token: any[] = [
       { id: '', userName: '', password: '', name: '', roles: [], userGroupId: '', token: '' }
     ];
-    return { customer, user };
+    return { customer, token, user };
   }
 }
 
