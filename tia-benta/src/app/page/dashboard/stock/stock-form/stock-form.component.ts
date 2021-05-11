@@ -4,9 +4,9 @@ import { StockService } from '../shared/stock.service';
 import { BaseFormComponent } from '../../../../shared/component/base-component/base-form.component';
 
 @Component({
-  selector: 'app-customer-form',
+  selector: 'app-stock-form',
   templateUrl: './stock-form.component.html',
-  styleUrls: ['./stock-form.component.css']
+  styleUrls: ['./stock-form.component.scss']
 })
 export class StockFormComponent extends BaseFormComponent<StockModel> {
 

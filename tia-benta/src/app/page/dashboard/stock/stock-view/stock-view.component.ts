@@ -5,9 +5,9 @@ import { StockService } from '../shared/stock.service';
 import { BaseViewComponent } from '../../../../shared/component/base-component/base-view.component';
 
 @Component({
-  selector: 'app-customer-view',
+  selector: 'app-stock-view',
   templateUrl: './stock-view.component.html',
-  styleUrls: ['./stock-view.component.css']
+  styleUrls: ['./stock-view.component.scss']
 })
 export class StockViewComponent extends BaseViewComponent<StockModel> {
   protected validateBeforeAction(): boolean {
