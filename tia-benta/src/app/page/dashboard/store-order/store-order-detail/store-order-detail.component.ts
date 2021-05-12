@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 
-import { PoDynamicFormField, PoPageAction } from '@po-ui/ng-components';
 import { StoreOrderModel } from '@model/store-order.model';
+import { BaseFormComponent } from '../../../../shared/component/base-component/base-form.component';
+import { StoreOrderService } from '../shared/store-order.service';
 
 @Component({
   selector: 'app-store-order-detail',
@@ -9,16 +10,22 @@ import { StoreOrderModel } from '@model/store-order.model';
   styleUrls: ['./store-order-detail.component.scss']
 })
 
-export class StoreOrderDetailComponent {
-  public fields: Array<PoDynamicFormField> = new StoreOrderModel().formFields;
-  public resource: StoreOrderModel = new StoreOrderModel();
+export class StoreOrderDetailComponent extends BaseFormComponent<StoreOrderModel> {
+  protected validateBeforeAction(): boolean {
+    return true;
+  }
 
-  readonly pageActions: Array<PoPageAction> = [];
+  protected onModalSave(): boolean {
+    return true;
+  }
 
-  constructor() { }
+  protected onModalCancel(): boolean {
+    return true;
+  }
 
-  getForm(item: any) {
-    console.log(item.form.value);
+  constructor(protected injector: Injector, protected storeOrderService: StoreOrderService) {
+    super(injector, new StoreOrderModel(), storeOrderService);
   }
 }
+
 
