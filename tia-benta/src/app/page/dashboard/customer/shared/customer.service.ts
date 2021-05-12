@@ -7,6 +7,6 @@ import { BaseResourceService } from '@service/base-resource.service';
 })
 export class CustomerService extends BaseResourceService<CustomerModel> {
   constructor(protected injector: Injector) {
-    super(injector, CustomerModel);
+    super(injector, 'customer', CustomerModel);
   }
 }
