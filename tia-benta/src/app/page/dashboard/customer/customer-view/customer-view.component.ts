@@ -1,5 +1,4 @@
 import { Component, Injector } from '@angular/core';
-
 import { CustomerModel } from '@model/customer.model';
 import { CustomerService } from '../shared/customer.service';
 import { BaseViewComponent } from '../../../../shared/component/base-component/base-view.component';
@@ -7,7 +6,7 @@ import { BaseViewComponent } from '../../../../shared/component/base-component/b
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
-  styleUrls: ['./customer-view.component.css']
+  styleUrls: ['./customer-view.component.scss']
 })
 export class CustomerViewComponent extends BaseViewComponent<CustomerModel> {
   protected validateBeforeAction(): boolean {

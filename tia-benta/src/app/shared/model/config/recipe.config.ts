@@ -23,9 +23,12 @@ export class RecipeConfig extends BaseModel {
         detail: {
           columns: new ItemModel().tableColumns,
           typeHeader: 'top'
-        }
+        },
       },
-    ]
+      { property: 'quantity', label: 'Quantidade', type: 'number'},
+      { property: 'unity', label: 'Unidade', type: 'number'},
+
+        ]
   }
 
 }

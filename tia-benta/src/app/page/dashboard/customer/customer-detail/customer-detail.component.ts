@@ -7,7 +7,7 @@ import { CustomerService } from '../shared/customer.service';
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
-  styleUrls: ['./customer-detail.component.css']
+  styleUrls: ['./customer-detail.component.scss']
 })
 export class CustomerDetailComponent extends BaseFormComponent<CustomerModel> {
   protected validateBeforeAction(): boolean {
