@@ -1,1 +1,4 @@
-<p>role-form works!</p>
+<po-page-default p-title="RoleForm" [p-actions]="pageActions">
+  <po-dynamic-form p-auto-focus="name" [p-fields]="fields" [p-value]="resource" (p-form)="getForm($event)">
+  </po-dynamic-form>
+</po-page-default>
